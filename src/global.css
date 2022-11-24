@@ -1,0 +1,446 @@
+.App {
+    color: var(--black);
+   
+    background: linear-gradient(
+    );
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Inter', sans-serif;
+  }
+  .AppGlass {
+    display: grid;
+    height: 100%;
+    /* width: 97%; */
+    background: var(--glass);
+    border-radius: 1rem;
+    gap: 14px;
+    grid-template-columns: 11rem auto 20rem;
+    overflow: hidden;
+  }
+  @media screen and (max-width: 1200px) {
+    .AppGlass{
+      grid-template-columns: 10% 50% auto;
+      overflow-y: scroll;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .AppGlass{
+      grid-template-columns: 1fr;
+    }
+  }
+  /* sidebar */
+  .sidebar {
+    background-color:  rgba(217, 88, 88, 0.64);
+  
+    height: 197vh;
+    margin-left: 1%;
+    width: 175px;
+    position: left;
+    border-radius: 20px
+  
+;
+  }
+  .donor{
+    display: flex;
+  }
+  .bars{
+    display: none;
+  }
+  .logo {
+    display: flex;
+    height: 5rem;
+    font-weight: bold;
+    font-size: 22px;
+    gap: 1rem;
+    margin-top: 14px;
+    margin-left: 20PX;
+   
+    align-items: center;
+    justify-content: center;
+    height: 4%;
+    
+  }
+  
+  .logo > span > span {
+    color:#c23748;
+  }
+  .logo > img {
+    width: 3rem;
+    height: 3rem;
+    
+  }
+  .menu {
+    margin-top: 5rem;
+    display: flex;
+    
+    flex-direction: column;
+    gap: 4rem;
+  }
+  .menuItem {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  
+    font-weight: 500;
+    height: 2.5rem;
+    margin-left: 2rem;
+    position: relative;
+    transition: all 300ms ease;
+    border-radius: 0.7rem;
+    font-size: 18px;
+    
+  }
+  .menuItem:hover {
+    cursor: pointer;
+  }
+  .menu .menuItem:last-child {
+    position: absolute;
+    bottom: 2.3rem;
+    /* width: 100%; */
+  }
+  .active {
+    background: var(--activeItem);
+    margin-left: 10;
+  }
+  .active::before {
+    content: "";
+    width: 12px;
+    height: 100%;
+    background: var(--pink);
+    margin-right: calc(1rem - 8px);
+  }
+  /* Tablets */
+  @media screen and (max-width: 1200px) {
+    .menuItem>span{
+      display: none;
+    }
+    .logo{
+      display: none;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .sidebar{
+      position: fixed;
+      /* background: #662525; */
+      z-index: 9;
+      background: #faf7f7;
+      width: 55%;
+      padding-right: 1rem;
+      height: 100%;
+    }
+    .menuItem>span{
+      
+      display: block;
+    }
+    .logo{
+      display: flex;
+    }
+    .menu .menuItem:last-child {
+      position: relative;
+      margin-top: 6rem;
+    }
+    .bars{
+      display: flex;
+      position: fixed;
+      top: 2rem;
+      left:60%;
+      background:#ffe0e0;
+      padding:10px;
+      border-radius: 10px;
+      z-index: 9;
+    }
+    .close{
+      left: -60%;
+    }
+  }
+
+
+/* Header */
+.icons{
+  font-size: 27px;
+  cursor: pointer;
+  color: rgb(34, 34, 34);
+  gap: 2rem;
+  display: flex;
+  position: absolute;
+  left: 85%;
+  margin-top: 4%;
+}
+
+
+/* Footer */
+.footer{
+color: rgb(1, 0, 0);
+position: absolute;
+left: 45%;
+/* margin-top: 3%; */
+}
+
+
+/* card */
+.CompactCard {
+  display: flex;
+  flex: 1;
+  height: 7rem !important;
+  border-radius: 0.7rem;
+  color: white;
+  padding: 1rem;
+  position: relative;
+  cursor: pointer;
+  
+}
+.CompactCard:hover {
+  box-shadow: none !important;
+  
+}
+
+/* radial bar */
+.radialBar {
+  flex: 1 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+.CircularProgressbar {
+  width: 4rem !important;
+  overflow: visible;
+  
+}
+.CircularProgressbar-path {
+  stroke: white !important;
+  stroke-width: 12px !important;
+  filter: drop-shadow(2px 4px 6px white);
+}
+.CircularProgressbar-trail {
+  display: none;
+}
+.CircularProgressbar-text {
+  fill: white !important;
+}
+
+.radialBar > span {
+  font-size: 17px;
+  
+  font-weight: bold;
+}
+
+/* sideDetail*/
+.detail {
+  font-weight: 800;
+  
+  font-size: 30px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.detail > span:nth-child(2) {
+  font-size: 22px;
+  
+  font-weight: bold;
+}
+.detail > span:nth-child(3) {
+  font-size: 12px;
+}
+
+
+/* ExpandedCard */
+.ExpandedCard {
+  position: absolute;
+  width: 60%;
+  height: 70vh;
+  z-index: 9;
+
+  left: 13rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 1rem;
+}
+.ExpandedCard > span:nth-of-type(1) {
+  color: white;
+  font-size: 26px;
+
+  font-weight: bold;
+  text-shadow: 0px 0px 15px white;
+}
+.ExpandedCard > span:nth-of-type(2) {
+  color: rgb(236, 236, 236);
+  font-size: 15px;
+  
+
+}
+
+.chartContainer {
+  width: 70%;
+
+}
+
+@media screen and (max-width: 1200px) {
+  .ExpandedCard {
+    top: 2rem;
+    height: 45vh;
+    left: 6rem;
+    
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .ExpandedCard {
+    top: 8rem;
+    height: 50%;
+    left: 25px;
+    width: 80%;
+
+  }
+}
+
+
+/* cards */
+.Cards {
+  display: flex;
+  gap: 10px;
+  /* margin-left: 9%; */
+
+}
+.parentContainer{
+  width: 500px;
+  margin-left: 4%;
+
+}
+
+@media screen and (max-width: 1200px) {
+  .Cards{
+    flex-direction: column;
+    
+
+  }
+  .parentContainer{
+    height: 9rem;
+    
+  }
+}
+
+@media screen and (max-width: 768px)
+{
+  .Cards{
+    width: 90%;
+  }
+}
+
+
+ */
+
+
+/* table */
+.App {
+  /* width: 100%; */
+  height: 1300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+
+ table th,
+td {
+  
+ font-weight: bolder;
+
+   color: rgb(20, 19, 19);
+   
+} 
+td {
+  
+  
+  font-size: 15px;
+}
+.tab{
+  margin-left: 9%;
+
+  
+}
+
+
+
+
+#Bloodrequest {
+  background-color: #ffff;
+  margin-top: 44%;
+  width: 970px;
+  
+  
+
+ 
+}
+#Bloodrequest tr:nth-child(even) {
+  
+  background-color: #EEF1F9}
+ 
+
+.head {
+  
+  margin-top: -45%;
+ 
+
+  
+} 
+.head h1 {
+
+
+  color: black;
+ 
+}
+h3{
+  /* margin-right: -56%; */
+  font-size: 20px;
+
+}
+
+
+
+@media screen and (max-width: 1400px) {
+  .MainDash{
+      justify-content:flex-start;
+      margin-top: 2rem;   
+  }
+}
+h1{
+  
+  color: rgb(85, 81, 81);
+
+}
+
+@media screen and (max-width: 800px)
+{
+  .MainDash{
+      align-items: center;
+  }
+}
+
+.request table{
+  margin-left: 4%;
+  padding-left: 10px;
+  margin-bottom: 10%;
+ 
+}
+.MainDash h2{
+  margin-left: 4%;
+ 
+}
+
+
+
+
+
+
+
+
